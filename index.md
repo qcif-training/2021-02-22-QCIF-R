@@ -80,7 +80,7 @@ displayed if the 'eventbrite' field in the header is not set.
         iframeContainerId: 'eventbrite-widget-container-{{page.eventbrite}}',
 
         // Optional
-        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        iframeContainerHeight: 225,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
