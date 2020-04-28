@@ -50,6 +50,8 @@ This block includes the Eventbrite registration widget if
 are not using Eventbrite, or leave it in, since it will not be
 displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
+
+{% comment %}
 {% if page.eventbrite %}
 <iframe
   src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
@@ -59,6 +61,32 @@ displayed if the 'eventbrite' field in the header is not set.
   scrolling="auto">
 </iframe>
 {% endif %}
+{% endcomment %}
+
+{% if page.eventbrite %}
+<div id="eventbrite-widget-container-{{page.eventbrite}}"></div>
+
+<script src="https://www.eventbrite.com.au/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        // Required
+        widgetType: 'checkout',
+        eventId: '94781944347',
+        iframeContainerId: 'eventbrite-widget-container-{{page.eventbrite}}',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+    });
+</script>
+{% endif %}
+
+
 
 
 <h2 id="general">General Information</h2>
