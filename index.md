@@ -51,20 +51,17 @@ are not using Eventbrite, or leave it in, since it will not be
 displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
 
-{% comment %}
 {% if page.eventbrite %}
 <iframe
+  {% comment %}
   src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+  {% endcomment %}
   frameborder="0"
   width="100%"
   height="280px"
   scrolling="auto">
-</iframe>
-{% endif %}
-{% endcomment %}
-
-{% if page.eventbrite %}
-<div id="eventbrite-widget-container-{{page.eventbrite}}"></div>
+  
+  <div id="eventbrite-widget-container-{{page.eventbrite}}"></div>
 
 <script src="https://www.eventbrite.com.au/static/widgets/eb_widgets.js"></script>
 
@@ -84,8 +81,10 @@ displayed if the 'eventbrite' field in the header is not set.
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-{% endif %}
 
+
+</iframe>
+{% endif %}
 
 
 
