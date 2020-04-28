@@ -53,14 +53,15 @@ displayed if the 'eventbrite' field in the header is not set.
 
 {% if page.eventbrite %}
 <iframe
-  {% comment %}
   src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
-  {% endcomment %}
   frameborder="0"
   width="100%"
   height="280px"
   scrolling="auto">
-  
+  </iframe>
+{% endif %}
+
+{% if page.eventbrite %}
   <div id="eventbrite-widget-container-{{page.eventbrite}}"></div>
 
 <script src="https://www.eventbrite.com.au/static/widgets/eb_widgets.js"></script>
@@ -81,11 +82,7 @@ displayed if the 'eventbrite' field in the header is not set.
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-
-
-</iframe>
 {% endif %}
-
 
 
 <h2 id="general">General Information</h2>
